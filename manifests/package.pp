@@ -14,11 +14,7 @@ class phpldapadmin::package {
     fail("Use of private class ${name} by ${caller_module_name}")
   }
 
-//  package { $phpldapadmin::params::package_name:
-//    ensure => installed,
-//  }
-
-  mod $phpldapadmin::params::package_name,
-    :git => 'https://github.com/breisig/phpLDAPadmin',
-    :install_path => '/usr/share/phpldapadmin'
+  package { $phpldapadmin::params::package_name:
+    ensure => installed,
+  }
 }
